@@ -1,13 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import WebRTCComponent from "./WebRTCComponent";
+import React from 'react';
+import TextChatComponent from './TextChatComponent';
+import VoiceCallComponent from './VoiceCallComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <WebRTCComponent />
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <div>
+            <h1>Text Chat</h1>
+            <TextChatComponent />
+            <h1>Voice Call</h1>
+            <VoiceCallComponent />
+        </div>
+    );
+};
 
 export default App;
