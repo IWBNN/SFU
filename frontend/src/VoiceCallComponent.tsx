@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
 
-const VOICE_SERVER_URL = 'wss://suportscore.site/voice';
+const VOICE_SERVER_URL = 'ws://localhost:8080/voice';
 
 const VoiceCallComponent: React.FC = () => {
     const [isCallStarted, setIsCallStarted] = useState(false);

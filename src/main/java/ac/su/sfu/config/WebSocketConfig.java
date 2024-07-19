@@ -15,7 +15,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Bean
     public KurentoClient kurentoClient() {
-        return KurentoClient.create("wss://suportscore.site:8433/kurento");
+        return KurentoClient.create("ws://localhost:8888/kurento");
     }
 
     @Bean
@@ -30,7 +30,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(webSocketHandler(kurentoClient()), "/ws").setAllowedOrigins("https://suportscore.site");
-        registry.addHandler(voiceWebSocketHandler(kurentoClient()), "/voice").setAllowedOrigins("https://suportscore.site");
+        registry.addHandler(webSocketHandler(kurentoClient()), "/ws").setAllowedOrigins("http://localhost:3000");
+        registry.addHandler(voiceWebSocketHandler(kurentoClient()), "/voice").setAllowedOrigins("http://localhost:3000");
     }
 }

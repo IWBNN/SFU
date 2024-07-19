@@ -2,13 +2,13 @@ import React from 'react';
 import TextChatComponent from './TextChatComponent';
 import VoiceCallComponent from './VoiceCallComponent';
 
-const App: React.FC = () => {
+let App = () => {
     return (
         <div>
             <h1>Text Chat</h1>
-            <TextChatComponent />
+            <TextChatComponent/>
             <h1>Voice Call</h1>
-            <VoiceCallComponent />
+            <VoiceCallComponent/>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
 
-const TEXT_SERVER_URL = 'wss://suportscore.site/ws';
+const TEXT_SERVER_URL = 'ws://localhost:8080/ws';
 
 const TextChatComponent: React.FC = () => {
     const [messages, setMessages] = useState<string[]>([]);
@@ -16,7 +16,7 @@ const TextChatComponent: React.FC = () => {
             setTextWsClient(textClient);
         };
 
-        textClient.onmessage = (message) => {
+        textClient.onmessage = (message: { data: { toString: () => string; }; }) => {
             const data = JSON.parse(message.data.toString());
             handleTextMessage(data);
         };
