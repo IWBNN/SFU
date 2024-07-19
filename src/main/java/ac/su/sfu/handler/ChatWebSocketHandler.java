@@ -13,6 +13,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {  // 이름을 �
 
     private final KurentoClient kurentoClient;
     private final Map<String, UserSession> userSessions = new ConcurrentHashMap<>();
+    User user;
 
     public ChatWebSocketHandler(KurentoClient kurentoClient) {
         this.kurentoClient = kurentoClient;
@@ -47,6 +48,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {  // 이름을 �
                     response.put("id", "message");
                     response.put("message", message);
                     response.put("sessionId", session.getId());
+                    response.put("nickName", session.getId());
                     u.getSession().sendMessage(new TextMessage(response.toString()));
                 }
             } catch (Exception e) {

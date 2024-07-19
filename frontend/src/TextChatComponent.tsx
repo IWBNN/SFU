@@ -37,7 +37,7 @@ const TextChatComponent: React.FC = () => {
 
     const handleTextMessage = (data: any) => {
         if (data.id === 'message') {
-            setMessages(prevMessages => [...prevMessages, `${data.sessionId}: ${data.message}`]);
+            setMessages(prevMessages => [...prevMessages, `${data.nickName}: ${data.message}`]);
         }
     };
 

@@ -9,6 +9,7 @@ public class UserSession {
     private final WebSocketSession session;
     private final WebRtcEndpoint webRtcEndpoint;
 
+
     public UserSession(WebSocketSession session) {
         this.session = session;
         this.webRtcEndpoint = null;
